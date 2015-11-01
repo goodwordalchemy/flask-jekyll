@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Blog Posts</h1>
+</div>
+<ul class="page-list">
+  {% for page in pages %}
+      <li><a href="{{ url_for('main.page', path=page.path) }}">
+          {{ page.meta.title }}
+      </a>- {{ page.meta.date }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
